@@ -1,6 +1,7 @@
 
 package com.example.learning.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -31,6 +32,7 @@ public class StudentEntity {
     @Id
     @SequenceGenerator(name="student_sequence", sequenceName="student_sequence", allocationSize=1)
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="student_sequence")
+    @JsonIgnore
     private Long id;
 
     @SequenceGenerator(name = "uuid_generator", sequenceName="uuid_generator")
@@ -43,15 +45,19 @@ public class StudentEntity {
     private String email;
 
     @Column(columnDefinition="VARCHAR(10) DEFAULT 'system'")
+    @JsonIgnore
     private String inputUser;
 
     @CreationTimestamp
+    @JsonIgnore
     private LocalDateTime inputDate;
 
     @Column(columnDefinition="VARCHAR(10) DEFAULT 'system'")
+    @JsonIgnore
     private String updateUser;
 
     @UpdateTimestamp 
+    @JsonIgnore
     private LocalDateTime updateDate;
 
     public StudentEntity() {}
