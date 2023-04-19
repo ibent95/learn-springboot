@@ -63,8 +63,9 @@ public class StudentEntity {
     public StudentEntity() {}
 
     public StudentEntity(
-            Long id, String uuid, String name, LocalDate birthDate, Integer age, String email,
-            String inputUser, LocalDateTime inputDate, String updateUser, LocalDateTime updateDate
+            Long id, String uuid, String name, LocalDate birthDate,
+            Integer age, String email, String inputUser, LocalDateTime inputDate,
+            String updateUser, LocalDateTime updateDate
     ) {
         this.id = id;
         this.uuid = (uuid != null) ? uuid : UUID.randomUUID().toString();
@@ -79,9 +80,9 @@ public class StudentEntity {
     }
     
     public StudentEntity(
-            String uuid, String name, LocalDate birthDate,
-            Integer age, String email, String inputUser,
-            LocalDateTime inputDate, String updateUser, LocalDateTime updateDate
+            String uuid, String name, LocalDate birthDate, Integer age,
+            String email, String inputUser, LocalDateTime inputDate,
+            String updateUser, LocalDateTime updateDate
     ) {
         this.uuid = (uuid != null) ? uuid : UUID.randomUUID().toString();
         this.name = name;
@@ -94,7 +95,10 @@ public class StudentEntity {
         this.updateDate = updateDate;
     }
 
-    public StudentEntity(String uuid, String name, LocalDate birthDate, Integer age, String email, String inputUser, String updateUser) {
+    public StudentEntity(
+            String uuid, String name, LocalDate birthDate, Integer age,
+            String email, String inputUser, String updateUser
+    ) {
         this.uuid = (uuid != null) ? uuid : UUID.randomUUID().toString();
         this.name = name;
         this.birthDate = birthDate;
@@ -104,7 +108,10 @@ public class StudentEntity {
         this.updateUser = updateUser;
     }
 
-    public StudentEntity(String name, LocalDate birthDate, Integer age, String email, String inputUser, String updateUser) {
+    public StudentEntity(
+            String name, LocalDate birthDate, Integer age,
+            String email, String inputUser, String updateUser
+    ) {
         this.uuid = UUID.randomUUID().toString();
         this.name = name;
         this.birthDate = birthDate;
@@ -114,7 +121,10 @@ public class StudentEntity {
         this.updateUser = updateUser;
     }
 
-    public StudentEntity(String uuid, String name, LocalDate birthDate, Integer age, String email, String updateUser) {
+    public StudentEntity(
+            String uuid, String name, LocalDate birthDate,
+            Integer age, String email, String updateUser
+    ) {
         this.uuid = (uuid != null) ? uuid : UUID.randomUUID().toString();
         this.name = name;
         this.birthDate = birthDate;
