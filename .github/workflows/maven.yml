@@ -27,6 +27,8 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
+    - name: Shutdown Ubuntu MySQL (SUDO)
+      run: sudo service mysql stop
     - name: Set up MySQL 5.7
       uses: mirromutth/mysql-action@master
       with:
@@ -36,8 +38,9 @@ jobs:
         collation server: 'utf8_general_ci'
         mysql version: 5.7
         mysql database: learning
-        mysql root password:
-        mysql password:
+        mysql user: 'root'
+        mysql root password: ${{ secrets.DatabasePassword }}
+        mysql password: ${{ secrets.DatabasePassword }}
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
