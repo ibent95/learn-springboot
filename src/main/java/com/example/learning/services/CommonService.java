@@ -44,14 +44,21 @@ public class CommonService {
 
         // Set birth of date to calendar
         Calendar birth = new GregorianCalendar();
-        birth.setTime(Date.from(birthDate.atStartOfDay(ZoneOffset.UTC).toInstant()));
+        birth.setTime(
+        	Date.from(birthDate.atStartOfDay(ZoneOffset.UTC).toInstant())
+        );
 
         // Set current date to calendar
         Calendar now = new GregorianCalendar();
         now.setTime(new Date());
 
-        // Set adjustment variable when different of current year and birth of year less than 0
-        int adjust = (now.get(Calendar.DAY_OF_YEAR) - birth.get(Calendar.DAY_OF_YEAR) < 0) ? -1 : 0;
+        /**
+         * Set adjustment variable when different of current year
+         * and birth of year less than 0
+         */
+        int adjust = (
+        	now.get(Calendar.DAY_OF_YEAR) - birth.get(Calendar.DAY_OF_YEAR) < 0
+        ) ? -1 : 0 ;
 
         // Set age
         age = now.get(Calendar.YEAR) - birth.get(Calendar.YEAR) + adjust;

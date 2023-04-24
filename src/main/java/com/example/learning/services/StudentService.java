@@ -24,5 +24,9 @@ public class StudentService {
     public List<StudentEntity> getAll() {
         return this.studentRepo.findAll();
     }
-    
+
+    public void insert(Object data) {
+		
+	}
+
 }
