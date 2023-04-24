@@ -36,8 +36,8 @@ jobs:
         collation server: 'utf8_general_ci'
         mysql version: 5.7
         mysql database: root
-        mysql root password: ${{ secrets.DatabasePassword }}
-        mysql password: ${{ secrets.DatabasePassword }}
+        mysql root password: 
+        mysql password: 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
