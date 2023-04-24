@@ -32,7 +32,7 @@ jobs:
     - name: Set up MySQL 8.0
       uses: mirromutth/mysql-action@master
       with:
-        host port: 3306
+        host port: ${{ secrets.MySQLHostPort }}
         character set server: 'utf8'
         collation server: 'utf8_general_ci'
         mysql version: 8.0
