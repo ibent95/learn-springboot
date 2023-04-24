@@ -29,13 +29,13 @@ jobs:
         cache: maven
     - name: Shutdown Ubuntu MySQL (SUDO)
       run: sudo service mysql stop
-    - name: Set up MySQL 10.6.7
+    - name: Set up MySQL 10.6
       uses: mirromutth/mysql-action@master
       with:
         host port: 3306
         character set server: 'utf8'
         collation server: 'utf8_general_ci'
-        mysql version: 10.6.7
+        mysql version: 10.6
         mysql database: learning
         mysql user: ${{ secrets.MySQLUser }}
         mysql root password: ${{ secrets.MySQLRootDatabasePassword }}
