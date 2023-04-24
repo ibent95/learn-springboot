@@ -37,7 +37,8 @@ jobs:
         collation server: 'utf8_general_ci'
         mysql version: 10.6.7
         mysql database: learning
-        mysql user: 'root'
+        mysql user: ${{ secrets.MySQLUser }}
+        mysql root password: ${{ secrets.MySQLRootDatabasePassword }}
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
